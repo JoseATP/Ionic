@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        Contacts
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+     <ion-list-header>
+        <ion-searchbar [(ngModel)]="searchTerm"   (ionInput)="filterContact()"></ion-searchbar>
+  </ion-list-header>
+        <ion-item *ngFor="let item of contactos">
+         {{ item.displayName }}
+         <p>Numero: {{item.phoneNumbers[0].value}}</p>
+       </ion-item>
+     </ion-list>
+  </ion-content>
