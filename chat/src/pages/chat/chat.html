@@ -1,0 +1,26 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>chatPage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+ </ion-list-header>
+       <ion-item *ngFor="let item of messages">
+        {{ item.text }}
+        <p>User: {{item.user}}</p>
+      </ion-item>
+    </ion-list>
+  <ion-input placeholder="Type Message"></ion-input>>  
+</ion-content>

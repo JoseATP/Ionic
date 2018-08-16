@@ -1,0 +1,39 @@
+
+<ion-header>
+
+  <ion-navbar color="dark">
+   
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding >
+  <ion-list >
+       <ion-item *ngFor="let item of messages" >
+          <ion-card [class]="setClass(item.user) ? 'mine' : 'other'" (click)= "presentAlert(item.text,getDate(item.date),item.user)">
+              <ion-card-header>
+                  {{ item.text }}
+              </ion-card-header>
+              <ion-card-content style="text-align: end">
+                  <p>{{item.user}}</p>
+              </ion-card-content>
+            </ion-card>
+      </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="input" fix-item>
+    <ion-toolbar >
+    <ion-grid>
+        <ion-row>
+          <ion-col col-9>
+            <ion-input placeholder="Type Message" [(ngModel)]="newM.text" ></ion-input>
+          </ion-col>
+          <ion-col col-3>
+            <button ion-button round icon-only color="dark" (click)='sentMessage()'>
+              <ion-icon name="send"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+       </ion-grid> 
+      </ion-toolbar>
+  </ion-footer>
